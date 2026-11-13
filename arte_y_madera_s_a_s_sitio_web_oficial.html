@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arte y Madera S.A.S. · Itagüí, Antioquia</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cormorant Garamond / Playfair Display (Serif) & Plus Jakarta Sans (Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        wood: {
+                            950: '#1A120C',
+                            900: '#211710',
+                            850: '#291D15',
+                            800: '#33241B',
+                            700: '#423024',
+                            600: '#5D3A1A',
+                            500: '#6E4720',
+                        },
+                        gold: {
+                            500: '#C89D28',
+                            400: '#D6AE3E',
+                        },
+                        forest: {
+                            700: '#266334',
+                            600: '#3E7549',
+                            500: '#4B8356',
+                        },
+                        cream: {
+                            100: '#F5F2EB',
+                            200: '#EAE4D7',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #211710;
+            color: #F5F2EB;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, .font-serif-title {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1A120C;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #5D3A1A;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C89D28;
+        }
+        .hero-bg {
+            background-image: linear-gradient(to right, rgba(26, 18, 12, 0.88) 0%, rgba(26, 18, 12, 0.65) 45%, rgba(26, 18, 12, 0.35) 100%), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1920&q=85');
+            background-size: cover;
+            background-position: center;
+        }
+        .card-border {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .input-dark {
+            background-color: #1D140E;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #F5F2EB;
+            transition: all 0.2s ease;
+        }
+        .input-dark:focus {
+            outline: none;
+            border-color: #C89D28;
+            box-shadow: 0 0 0 2px rgba(200, 157, 40, 0.2);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold-500 selection:text-wood-950">
+
+    <!-- HEADER SUPERIOR FIJO (Idéntico a las capturas) -->
+    <header class="sticky top-0 z-50 bg-[#F3EFE6] text-wood-900 border-b border-stone-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between">
+            <!-- Logo Izquierda -->
+            <a href="#inicio" onclick="setActiveNav('inicio')" class="flex items-center gap-3 group">
+                <div class="w-9 h-9 rounded-full bg-[#5A381E] flex items-center justify-center text-[#F3EFE6] shadow-inner transition-transform group-hover:scale-105">
+                    <!-- Icono Pino Geométrico -->
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3L5 14h5l-2 5h8l-2-5h5L12 3z"/>
+                        <path d="M12 19v3"/>
+                    </svg>
+                </div>
+                <div class="leading-tight">
+                    <span class="font-serif font-bold text-lg tracking-tight text-stone-800 block">Arte y Madera</span>
+                    <span class="text-[10px] font-semibold tracking-[0.18em] text-[#8A6236] block">S.A.S. · ITAGÜÍ</span>
+                </div>
+            </a>
+
+            <!-- Navegación Central -->
+            <nav class="hidden md:flex items-center gap-1 lg:gap-2 text-xs font-medium">
+                <a href="#inicio" id="nav-inicio" onclick="setActiveNav('inicio')" class="nav-pill px-4 py-1.5 rounded-full bg-[#5A381E] text-white transition-all">
+                    Inicio
+                </a>
+                <a href="#productos" id="nav-productos" onclick="setActiveNav('productos')" class="nav-pill px-4 py-1.5 rounded-full text-stone-600 hover:text-stone-900 hover:bg-stone-200/60 transition-all">
+                    Productos
+                </a>
+                <a href="#esencias" id="nav-esencias" onclick="setActiveNav('esencias')" class="nav-pill px-4 py-1.5 rounded-full text-stone-600 hover:text-stone-900 hover:bg-stone-200/60 transition-all">
+                    Esencias
+                </a>
+                <a href="#nosotros" id="nav-nosotros" onclick="setActiveNav('nosotros')" class="nav-pill px-4 py-1.5 rounded-full text-stone-600 hover:text-stone-900 hover:bg-stone-200/60 transition-all">
+                    Nosotros / Contacto
+                </a>
+            </nav>
+
+            <!-- Botón CTA Derecha -->
+            <div class="flex items-center gap-2">
+                <a href="#contacto-form" onclick="setActiveNav('nosotros')" class="bg-[#C89D28] hover:bg-[#b58c20] text-[#1E1610] font-semibold text-xs px-5 py-2.5 rounded-full shadow-sm transition-all transform hover:-translate-y-0.5">
+                    Cotizar mi mueble
+                </a>
+                <!-- Botón menú móvil -->
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-stone-800 hover:bg-stone-200">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#F3EFE6] border-t border-stone-300 px-4 pt-2 pb-4 space-y-1">
+            <a href="#inicio" onclick="setActiveNav('inicio'); toggleMobileMenu()" class="block px-4 py-2 rounded-lg text-sm font-semibold text-stone-800 hover:bg-stone-200">Inicio</a>
+            <a href="#productos" onclick="setActiveNav('productos'); toggleMobileMenu()" class="block px-4 py-2 rounded-lg text-sm font-semibold text-stone-800 hover:bg-stone-200">Productos</a>
+            <a href="#esencias" onclick="setActiveNav('esencias'); toggleMobileMenu()" class="block px-4 py-2 rounded-lg text-sm font-semibold text-stone-800 hover:bg-stone-200">Esencias</a>
+            <a href="#nosotros" onclick="setActiveNav('nosotros'); toggleMobileMenu()" class="block px-4 py-2 rounded-lg text-sm font-semibold text-stone-800 hover:bg-stone-200">Nosotros / Contacto</a>
+        </div>
+    </header>
+
+    <!-- ==========================================
+         SECCIÓN 1: HERO / INICIO
+         ========================================== -->
+    <section id="inicio" class="hero-bg min-h-[85vh] flex items-center relative border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-6 sm:px-10 py-24 w-full">
+            <div class="max-w-2xl">
+                <p class="text-[11px] font-semibold tracking-[0.22em] uppercase text-[#D8B454] mb-3 flex items-center gap-2">
+                    <span>🌿 ITAGÜÍ · ANTIOQUIA · COLOMBIA</span>
+                </p>
+                <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-tight mb-5">
+                    Arte y Madera <span class="italic text-[#D8B454] font-semibold">S.A.S.</span>
+                </h1>
+                <p class="text-base sm:text-lg text-stone-200 leading-relaxed mb-8 max-w-xl font-normal">
+                    Muebles en madera que huelen a hogar. Diseño, funcionalidad y una experiencia sensorial única.
+                </p>
+
+                <!-- Botones del Hero -->
+                <div class="flex flex-wrap items-center gap-3.5 mb-10">
+                    <a href="#productos" onclick="setActiveNav('productos')" class="bg-[#C89D28] hover:bg-[#d8ad36] text-[#1E1610] font-semibold text-xs sm:text-sm px-6 py-3.5 rounded-full inline-flex items-center gap-2 transition-all shadow-lg">
+                        <span>Ver productos</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                    <a href="#esencias" onclick="setActiveNav('esencias')" class="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border border-white/30 font-medium text-xs sm:text-sm px-6 py-3.5 rounded-full transition-all">
+                        Descubrir esencias
+                    </a>
+                </div>
+
+                <!-- Atributos inferiores -->
+                <div class="flex flex-wrap items-center gap-6 text-xs text-stone-200/90 font-medium">
+                    <span class="flex items-center gap-1.5"><span class="text-[#D8B454]">✦</span> Diseño artesanal</span>
+                    <span class="flex items-center gap-1.5"><span class="text-[#D8B454]">✦</span> Aroma natural</span>
+                    <span class="flex items-center gap-1.5"><span class="text-[#D8B454]">✦</span> Hecho a tu medida</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SUBSECCIÓN: NUESTRA RAZÓN DE SER (Misión y Visión)
+         ========================================== -->
+    <section class="max-w-6xl mx-auto px-6 sm:px-10 pt-20 pb-14">
+        <div class="flex items-end justify-between mb-8">
+            <div>
+                <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#C89D28] mb-2">
+                    NUESTRA RAZÓN DE SER
+                </p>
+                <h2 class="font-serif text-4xl sm:text-5xl font-bold text-white leading-[1.15]">
+                    Hecho con manos,<br>pensado para el hogar.
+                </h2>
+            </div>
+            <!-- Ícono cepillo de carpintero / viruta en dorado -->
+            <div class="hidden sm:flex text-[#C89D28] opacity-90">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M7 14c-1.66 0-3 1.34-3 3 0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2 2.21 0 4-1.79 4-4 0-1.66-1.34-3-3-3zm13.71-9.37l-1.34-1.34a.996.996 0 00-1.41 0L9 12.25 11.75 15l8.96-8.96a.996.996 0 000-1.41z"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Grid Misión y Visión -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            <!-- Tarjeta MISIÓN -->
+            <div class="bg-[#633E1B] rounded-2xl p-8 sm:p-10 shadow-xl border border-white/10 flex flex-col justify-between">
+                <div>
+                    <span class="text-[11px] font-bold tracking-[0.18em] uppercase text-[#E4B84A] block mb-5">
+                        MISIÓN
+                    </span>
+                    <p class="font-serif text-lg sm:text-[21px] leading-[1.65] text-stone-100 font-medium">
+                        “Somos una empresa ubicada en Itagüí dedicada al diseño, fabricación y comercialización de productos artesanales en madera de alta calidad, funcionales, modernos y estéticamente atractivos. Trabajamos con materiales confiables, diseños innovadores y valor agregado basados en un aroma natural que brindan una experiencia sensorial única, creando ambientes cálidos, acogedores y llenos de bienestar. Nos comprometemos a ofrecer un servicio personalizado, garantizando soluciones que reflejan calidad, creatividad y satisfacción en cada proyecto.”
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tarjeta VISIÓN -->
+            <div class="bg-[#291D15] rounded-2xl p-8 sm:p-10 shadow-xl card-border flex flex-col justify-between">
+                <div>
+                    <span class="text-[11px] font-bold tracking-[0.18em] uppercase text-[#8C653E] block mb-5">
+                        VISIÓN
+                    </span>
+                    <p class="font-serif text-lg sm:text-[21px] leading-[1.65] text-stone-100 font-medium mb-6">
+                        “En el año 2029, Arte y Madera S.A.S. será reconocida como una empresa destacada en el diseño, fabricación y comercialización de productos de madera, caracterizada por la calidad, innovación y la incorporación de aromas naturales como elementos diferenciadores. Seremos una marca confiable y competitiva, con una presencia consolidada en el mercado y reconocida por ofrecer productos que integran diseños, funcionalidad y una experiencia sensorial única. Nos distinguiremos por la mejora continua, la excelencia en nuestros procesos y el compromiso con la satisfacción de nuestros clientes, posicionándonos como un referente de creatividad, calidad e innovación en el sector.”
+                    </p>
+                </div>
+                <div class="w-24 h-0.5 bg-gradient-to-r from-[#C89D28] to-transparent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SUBSECCIÓN: ¿POR QUÉ ARTE Y MADERA? + VALORES
+         ========================================== -->
+    <section class="max-w-6xl mx-auto px-6 sm:px-10 py-12">
+        <div class="mb-8">
+            <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#4B8356] mb-2">
+                LA DIFERENCIA
+            </p>
+            <h2 class="font-serif text-4xl sm:text-5xl font-bold text-white">
+                ¿Por qué Arte y Madera?
+            </h2>
+        </div>
+
+        <!-- 3 Tarjetas de Diferenciadores -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-14">
+            <!-- Card 1 -->
+            <div class="bg-[#291D15] rounded-2xl p-6 sm:p-7 card-border hover:border-[#5D3A1A] transition-all">
+                <div class="w-10 h-10 rounded-full bg-[#38291B] text-[#B37D3B] flex items-center justify-center mb-5">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                    </svg>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-white mb-2 leading-snug">
+                    Aromatización progresiva en la madera
+                </h3>
+                <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                    El aroma se libera poco a poco y acompaña tu casa sin invadirla.
+                </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-[#291D15] rounded-2xl p-6 sm:p-7 card-border hover:border-[#5D3A1A] transition-all">
+                <div class="w-10 h-10 rounded-full bg-[#38291B] text-[#B37D3B] flex items-center justify-center mb-5">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                    </svg>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-white mb-2 leading-snug">
+                    Mobiliario hiper personalizado
+                </h3>
+                <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                    Medidas, formas y esencia elegidas para tu espacio y tu manera de vivir.
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-[#291D15] rounded-2xl p-6 sm:p-7 card-border hover:border-[#5D3A1A] transition-all">
+                <div class="w-10 h-10 rounded-full bg-[#38291B] text-[#B37D3B] flex items-center justify-center mb-5">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                    </svg>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-white mb-2 leading-snug">
+                    Calidad artesanal y sostenible
+                </h3>
+                <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                    Materiales confiables, trabajo cuidadoso y piezas hechas para durar.
+                </p>
+            </div>
+        </div>
+
+        <!-- Banner Verde: Valores que se sienten en cada pieza -->
+        <div class="bg-[#266334] rounded-3xl p-7 sm:p-10 shadow-xl mb-8">
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-2">
+                Valores que se sienten en cada pieza
+            </h2>
+            <p class="text-xs sm:text-sm text-stone-100/90 mb-8 max-w-md">
+                Nuestra forma de trabajar también es parte del mueble que llega a tu casa.
+            </p>
+
+            <!-- 5 Tarjetas de Valores -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
+                <div class="bg-[#41784B] rounded-xl p-4 sm:p-5 border border-white/10">
+                    <h4 class="font-serif font-bold text-lg text-white mb-1.5">Honestidad</h4>
+                    <p class="text-xs text-stone-100/90 leading-relaxed">Decimos lo que hacemos y hacemos lo que prometemos.</p>
+                </div>
+                <div class="bg-[#41784B] rounded-xl p-4 sm:p-5 border border-white/10">
+                    <h4 class="font-serif font-bold text-lg text-white mb-1.5">Servicio</h4>
+                    <p class="text-xs text-stone-100/90 leading-relaxed">Escuchamos primero y acompañamos cada proyecto.</p>
+                </div>
+                <div class="bg-[#41784B] rounded-xl p-4 sm:p-5 border border-white/10">
+                    <h4 class="font-serif font-bold text-lg text-white mb-1.5">Perseverancia</h4>
+                    <p class="text-xs text-stone-100/90 leading-relaxed">Cuidamos cada detalle hasta que queda como lo imaginaste.</p>
+                </div>
+                <div class="bg-[#41784B] rounded-xl p-4 sm:p-5 border border-white/10">
+                    <h4 class="font-serif font-bold text-lg text-white mb-1.5">Compromiso</h4>
+                    <p class="text-xs text-stone-100/90 leading-relaxed">Tu hogar merece la misma dedicación que el nuestro.</p>
+                </div>
+                <div class="bg-[#41784B] rounded-xl p-4 sm:p-5 border border-white/10">
+                    <h4 class="font-serif font-bold text-lg text-white mb-1.5">Empatía</h4>
+                    <p class="text-xs text-stone-100/90 leading-relaxed">Diseñamos para la vida real de quienes habitan el espacio.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2 Tarjetas Inferiores: Ubicación y Cobertura -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div class="bg-[#291D15] rounded-2xl p-6 card-border">
+                <div class="flex items-center gap-2 text-xs font-bold text-white mb-2">
+                    <svg class="w-4 h-4 text-[#8C653E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                    <span>Ubicación</span>
+                </div>
+                <p class="text-sm font-semibold text-white mb-1">Itagüí, sector Parque Obrero, Calle 47.</p>
+                <p class="text-xs text-stone-300">Un punto cercano para conocer materiales, medidas y acabados.</p>
+            </div>
+
+            <div class="bg-[#291D15] rounded-2xl p-6 card-border">
+                <div class="flex items-center gap-2 text-xs font-bold text-white mb-2">
+                    <svg class="w-4 h-4 text-[#8C653E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span>Cobertura</span>
+                </div>
+                <p class="text-sm font-semibold text-white mb-1">Itagüí, Medellín y Valle de Aburrá.</p>
+                <p class="text-xs text-stone-300">Cuéntanos dónde estás y diseñamos la propuesta para tu espacio.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SECCIÓN 2: CATÁLOGO DE PRODUCTOS (11 productos)
+         ========================================== -->
+    <section id="productos" class="max-w-6xl mx-auto px-6 sm:px-10 py-16 border-t border-white/10">
+        <div class="mb-8">
+            <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#C89D28] mb-2">
+                CATÁLOGO ARTESANAL
+            </p>
+            <h2 class="font-serif text-4xl sm:text-5xl font-bold text-white mb-3">
+                Muebles pensados para durar
+            </h2>
+            <p class="text-sm text-stone-300 max-w-xl">
+                Cada pieza se fabrica sobre pedido en nuestro taller de Itagüí, ajustando medida, materiales y esencia.
+            </p>
+        </div>
+
+        <!-- Barra de Búsqueda y Filtro de Precio (Idéntica a captura 2) -->
+        <div class="bg-[#291D15] rounded-2xl p-3.5 sm:p-4 card-border flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 mb-5">
+            <div class="relative flex-1">
+                <svg class="w-4 h-4 text-stone-400 absolute left-4 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    oninput="filterProducts()"
+                    placeholder="Buscar por nombre, por ejemplo: Clóset" 
+                    class="w-full bg-[#1C140E] text-xs sm:text-sm text-white placeholder-stone-400 pl-10 pr-4 py-3 rounded-xl border border-white/5 focus:outline-none focus:border-[#C89D28]"
+                >
+            </div>
+            <div class="flex items-center gap-3">
+                <label for="price-filter" class="text-xs font-semibold text-stone-300 whitespace-nowrap">Rango de precio</label>
+                <select 
+                    id="price-filter" 
+                    onchange="filterProducts()"
+                    class="bg-[#1C140E] text-xs sm:text-sm text-white font-medium px-4 py-3 rounded-xl border border-white/10 focus:outline-none focus:border-[#C89D28] cursor-pointer"
+                >
+                    <option value="all">Todos los precios</option>
+                    <option value="low">Hasta $ 1.000.000</option>
+                    <option value="mid">$ 1.000.000 - $ 1.600.000</option>
+                    <option value="high">Más de $ 1.600.000</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Contador de productos -->
+        <p id="product-count" class="text-xs font-bold text-stone-200 mb-5">
+            11 productos encontrados
+        </p>
+
+        <!-- Grid de Productos -->
+        <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Renderizado dinámicamente por JS -->
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SECCIÓN 3: ESENCIAS ("El aroma vive en la madera")
+         ========================================== -->
+    <section id="esencias" class="max-w-6xl mx-auto px-6 sm:px-10 py-16 border-t border-white/10">
+        <div class="mb-10 max-w-2xl">
+            <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#C89D28] mb-2">
+                EXPERIENCIA SENSORIAL
+            </p>
+            <h2 class="font-serif text-4xl sm:text-5xl font-bold text-white mb-4">
+                El aroma vive en la madera
+            </h2>
+            <p class="text-sm text-stone-300 leading-relaxed">
+                Nuestro sistema de aromatización progresiva impregna la madera para que el aroma se libere poco a poco. No es un perfume pasajero: es parte del mueble y del ambiente que crea.
+            </p>
+        </div>
+
+        <!-- 3 Tarjetas de Esencias (Lavanda, Bergamota, Vainilla) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <!-- Lavanda -->
+            <div class="bg-[#291D15] rounded-2xl overflow-hidden card-border flex flex-col">
+                <div class="h-52 overflow-hidden bg-stone-800 relative">
+                    <img src="https://images.unsplash.com/photo-1595981267035-7b04ca84a82d?auto=format&fit=crop&w=800&q=80" alt="Esencia de Lavanda" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-[#4B8356] block mb-1.5">
+                            RELAJANTE · CALMA
+                        </span>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-2">Lavanda</h3>
+                        <p class="text-xs text-stone-300 leading-relaxed">
+                            Relajante, calma, ideal para dormitorios, clósets y base cama. Sensación de descanso y bienestar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bergamota -->
+            <div class="bg-[#291D15] rounded-2xl overflow-hidden card-border flex flex-col">
+                <div class="h-52 overflow-hidden bg-stone-800 relative">
+                    <img src="https://images.unsplash.com/photo-1590502593747-42a996133562?auto=format&fit=crop&w=800&q=80" alt="Esencia de Bergamota Cítrica" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-[#4B8356] block mb-1.5">
+                            FRESCA · CÍTRICA
+                        </span>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-2">Bergamota</h3>
+                        <p class="text-xs text-stone-300 leading-relaxed">
+                            Fresca y cítrica, energía y frescura, ideal para salas, comedores y escritorios.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vainilla -->
+            <div class="bg-[#291D15] rounded-2xl overflow-hidden card-border flex flex-col">
+                <div class="h-52 overflow-hidden bg-stone-800 relative">
+                    <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=80" alt="Esencia de Vainilla" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-[#4B8356] block mb-1.5">
+                            CÁLIDA · DULCE
+                        </span>
+                        <h3 class="font-serif text-2xl font-bold text-white mb-2">Vainilla</h3>
+                        <p class="text-xs text-stone-300 leading-relaxed">
+                            Cálida y dulce, acogedora, ideal para salas, cocinas y espacios familiares.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Módulo Interactivo: Elige tu esencia (Idéntico a captura 3) -->
+        <div class="bg-[#68421E] rounded-3xl p-7 sm:p-10 shadow-xl border border-white/10">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                <div>
+                    <span class="text-[10px] font-bold tracking-[0.2em] uppercase text-[#E4B84A] block mb-1">
+                        INTERACTIVO
+                    </span>
+                    <h3 class="font-serif text-3xl sm:text-4xl font-bold text-white">
+                        Elige tu esencia
+                    </h3>
+                </div>
+                <p class="text-xs text-stone-200 max-w-xs">
+                    Toca una esencia y descubre en qué muebles queda mejor.
+                </p>
+            </div>
+
+            <!-- Botones selectores de esencia -->
+            <div class="flex flex-wrap gap-2.5 mb-7">
+                <button onclick="selectEssence('Lavanda')" id="btn-ess-Lavanda" class="essence-btn px-5 py-2.5 rounded-full text-xs font-bold bg-[#C89D28] text-[#1E1610] transition-all shadow">
+                    Lavanda
+                </button>
+                <button onclick="selectEssence('Bergamota')" id="btn-ess-Bergamota" class="essence-btn px-5 py-2.5 rounded-full text-xs font-semibold bg-[#7A522B] text-white hover:bg-[#8A5E34] transition-all">
+                    Bergamota
+                </button>
+                <button onclick="selectEssence('Vainilla')" id="btn-ess-Vainilla" class="essence-btn px-5 py-2.5 rounded-full text-xs font-semibold bg-[#7A522B] text-white hover:bg-[#8A5E34] transition-all">
+                    Vainilla
+                </button>
+            </div>
+
+            <!-- Resultado dinámico de la esencia -->
+            <div id="essence-detail" class="bg-[#523316] rounded-2xl p-6 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+                <div>
+                    <span id="ess-badge" class="text-[10px] font-bold tracking-[0.18em] uppercase text-[#E4B84A] block mb-1">
+                        RECOMENDACIÓN PARA LAVANDA
+                    </span>
+                    <h4 id="ess-title" class="font-serif text-2xl font-bold text-white mb-2">
+                        Ideal para: Clóset Mediano, Armario, Base Cama y Nochero
+                    </h4>
+                    <p id="ess-desc" class="text-xs sm:text-sm text-stone-200 max-w-2xl">
+                        Cada vez que abras tu clóset o te acuestes a descansar, sentirás una nota herbal suave que reduce el estrés y mantiene tu ropa con aroma fresco de hogar.
+                    </p>
+                </div>
+                <button onclick="quoteWithEssence()" class="bg-[#C89D28] hover:bg-[#d8ad36] text-[#1E1610] font-bold text-xs px-5 py-3 rounded-full whitespace-nowrap transition-all">
+                    Cotizar con esta esencia →
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SECCIÓN 4: NOSOTROS / CONTACTO (Idéntico a captura 4)
+         ========================================== -->
+    <section id="nosotros" class="max-w-6xl mx-auto px-6 sm:px-10 py-16 border-t border-white/10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            
+            <!-- Columna Izquierda: NOSOTROS (7 columnas en desktop) -->
+            <div class="lg:col-span-6 space-y-6">
+                <div>
+                    <p class="text-[11px] font-bold tracking-[0.2em] uppercase text-[#C89D28] mb-2">
+                        NOSOTROS
+                    </p>
+                    <h2 class="font-serif text-4xl sm:text-5xl font-bold text-white leading-[1.12] mb-5">
+                        Una empresa joven, con oficio y corazón
+                    </h2>
+                    <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                        Arte y Madera S.A.S. fue fundada el 23 de julio de 2026 por 5 socios. Somos una microempresa de 10 colaboradores que une diseño, carpintería y experiencia sensorial para crear muebles con historia.
+                    </p>
+                </div>
+
+                <!-- Caja: Objetivos 2029 -->
+                <div class="bg-[#291D15] rounded-2xl p-6 sm:p-7 card-border">
+                    <h3 class="font-serif text-2xl font-bold text-white mb-5">
+                        Objetivos 2029
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3.5 text-xs sm:text-sm text-stone-200">
+                            <span class="text-[#C89D28] text-base leading-none mt-0.5">☆</span>
+                            <p class="leading-relaxed">
+                                Crecer un <strong class="text-white font-bold">+35% en ventas</strong> con procesos cada vez más cuidados.
+                            </p>
+                        </div>
+                        <div class="flex items-start gap-3.5 text-xs sm:text-sm text-stone-200">
+                            <span class="text-[#C89D28] text-base leading-none mt-0.5">☆</span>
+                            <p class="leading-relaxed">
+                                Consolidar nuestro <strong class="text-white font-bold">posicionamiento</strong> como referente de diseño, calidad e innovación.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Caja: Encuéntranos en redes sociales -->
+                <div class="bg-[#221811] rounded-2xl p-6 sm:p-7 border border-[#3E2E22]">
+                    <h4 class="text-sm font-bold text-white mb-1.5">
+                        Encuéntranos en redes sociales
+                    </h4>
+                    <p class="text-xs text-stone-300 leading-relaxed mb-5">
+                        Escríbenos por redes sociales. Sin teléfonos ni correos inventados: la conversación empieza donde ya estás.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-2.5">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full text-xs font-bold bg-[#633E1B] hover:bg-[#754920] text-white transition-all">
+                            Instagram
+                        </a>
+                        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full text-xs font-bold bg-[#F3EFE6] hover:bg-white text-stone-900 transition-all">
+                            TikTok
+                        </a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-full text-xs font-bold bg-[#266334] hover:bg-[#2e783f] text-white transition-all">
+                            Facebook
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: CONTACTO Y COTIZACIÓN (Formulario) -->
+            <div id="contacto-form" class="lg:col-span-6 bg-[#291D15] rounded-3xl p-7 sm:p-9 card-border shadow-2xl">
+                <p class="text-[10px] font-bold tracking-[0.2em] uppercase text-[#4B8356] mb-1.5">
+                    CONTACTO Y COTIZACIÓN
+                </p>
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-1.5">
+                    Cuéntanos qué mueble imaginas
+                </h3>
+                <p class="text-xs text-stone-300 mb-6">
+                    Completa el formulario y tu solicitud quedará registrada.
+                </p>
+
+                <form id="quote-form" onsubmit="handleQuoteSubmit(event)" class="space-y-4">
+                    <!-- Fila 1: Nombre y Teléfono -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-white mb-1.5">Nombre *</label>
+                            <input 
+                                type="text" 
+                                id="form-name" 
+                                required 
+                                placeholder="Tu nombre" 
+                                class="w-full input-dark rounded-xl px-4 py-3 text-xs sm:text-sm"
+                            >
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-white mb-1.5">Teléfono</label>
+                            <input 
+                                type="tel" 
+                                id="form-phone" 
+                                placeholder="Opcional" 
+                                class="w-full input-dark rounded-xl px-4 py-3 text-xs sm:text-sm"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Fila 2: Producto de interés y Esencia preferida -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-white mb-1.5">Producto de interés</label>
+                            <select id="form-product" class="w-full input-dark rounded-xl px-4 py-3 text-xs sm:text-sm cursor-pointer">
+                                <option value="Clóset Mediano">Clóset Mediano</option>
+                                <option value="Mueble de TV">Mueble de TV</option>
+                                <option value="Armario">Armario</option>
+                                <option value="Comedor 6 Puestos">Comedor 6 Puestos</option>
+                                <option value="Repisa Flotante">Repisa Flotante</option>
+                                <option value="Escritorio Home Office">Escritorio Home Office</option>
+                                <option value="Base Cama Queen">Base Cama Queen</option>
+                                <option value="Mesa de Centro">Mesa de Centro</option>
+                                <option value="Nochero Artesanal">Nochero Artesanal</option>
+                                <option value="Biblioteca Modular">Biblioteca Modular</option>
+                                <option value="Bife / Aparador">Bife / Aparador</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-white mb-1.5">Esencia preferida</label>
+                            <select id="form-essence" class="w-full input-dark rounded-xl px-4 py-3 text-xs sm:text-sm cursor-pointer">
+                                <option value="Lavanda">Lavanda</option>
+                                <option value="Bergamota">Bergamota</option>
+                                <option value="Vainilla">Vainilla</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Fila 3: Mensaje -->
+                    <div>
+                        <label class="block text-xs font-bold text-white mb-1.5">Mensaje *</label>
+                        <textarea 
+                            id="form-message" 
+                            required 
+                            rows="4" 
+                            placeholder="Cuéntanos medidas, espacio, colores y la sensación que quieres crear..." 
+                            class="w-full input-dark rounded-xl px-4 py-3 text-xs sm:text-sm resize-none"
+                        ></textarea>
+                    </div>
+
+                    <!-- Botón Enviar -->
+                    <button 
+                        type="submit" 
+                        class="w-full bg-[#C89D28] hover:bg-[#d8ad36] text-[#1E1610] font-bold text-xs sm:text-sm py-3.5 rounded-full shadow-lg flex items-center justify-center gap-2 transition-all transform active:scale-[0.99]"
+                    >
+                        <span>Enviar solicitud</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                        </svg>
+                    </button>
+                </form>
+
+                <!-- Notificación de Confirmación -->
+                <div id="form-feedback" class="hidden mt-4 p-4 rounded-xl bg-[#266334]/90 border border-emerald-400/30 text-white text-xs">
+                    <p class="font-bold mb-0.5">✓ ¡Solicitud registrada con éxito!</p>
+                    <p id="feedback-detail" class="text-stone-100"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER (Idéntico a las capturas)
+         ========================================== -->
+    <footer class="border-t border-[#3E2E22] bg-[#1D140E] py-10 mt-10">
+        <div class="max-w-6xl mx-auto px-6 sm:px-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div>
+                <h4 class="font-serif text-xl font-bold text-white mb-1">Arte y Madera S.A.S.</h4>
+                <p class="text-xs text-stone-400">Itagüí, Antioquia – Colombia</p>
+            </div>
+            <div class="flex flex-wrap items-center gap-2">
+                <a href="#inicio" onclick="setActiveNav('inicio')" class="px-4 py-2 rounded-full text-xs text-stone-200 border border-[#3E2E22] hover:border-[#C89D28] transition-all">
+                    Inicio
+                </a>
+                <a href="#productos" onclick="setActiveNav('productos')" class="px-4 py-2 rounded-full text-xs text-stone-200 border border-[#3E2E22] hover:border-[#C89D28] transition-all">
+                    Productos
+                </a>
+                <a href="#esencias" onclick="setActiveNav('esencias')" class="px-4 py-2 rounded-full text-xs text-stone-200 border border-[#3E2E22] hover:border-[#C89D28] transition-all">
+                    Esencias
+                </a>
+                <a href="#nosotros" onclick="setActiveNav('nosotros')" class="px-4 py-2 rounded-full text-xs text-stone-200 border border-[#3E2E22] hover:border-[#C89D28] transition-all">
+                    Nosotros / Contacto
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         LÓGICA INTERACTIVA (JavaScript)
+         ========================================== -->
+    <script>
+        // Base de datos de los 11 productos artesanales
+        const productsData = [
+            {
+                id: 1,
+                name: "Clóset Mediano",
+                category: "Dormitorio",
+                description: "Orden, proporción y aroma suave cada vez que abres sus puertas.",
+                price: 1650000,
+                priceFormatted: "$ 1.650.000",
+                essence: "Lavanda",
+                image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=85"
+            },
+            {
+                id: 2,
+                name: "Mueble de TV",
+                category: "Sala",
+                description: "Centro de sala con líneas limpias y espacio para todo lo esencial.",
+                price: 1600000,
+                priceFormatted: "$ 1.600.000",
+                essence: "Bergamota",
+                image: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=85"
+            },
+            {
+                id: 3,
+                name: "Armario",
+                category: "Dormitorio",
+                description: "Guardado amplio con carácter artesanal y acabado cálido.",
+                price: 1200000,
+                priceFormatted: "$ 1.200.000",
+                essence: "Lavanda",
+                image: "https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=800&q=85"
+            },
+            {
+                id: 4,
+                name: "Comedor 6 Puestos",
+                category: "Comedor",
+                description: "Punto de encuentro familiar en madera maciza con aroma cálido.",
+                price: 2400000,
+                priceFormatted: "$ 2.400.000",
+                essence: "Vainilla",
+                image: "https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?auto=format&fit=crop&w=800&q=85"
+            },
+            {
+                id: 5,
+                name: "Repisa Flotante",
+                category: "Sala",
+                description: "Detalle funcional y ligero para exhibir tus objetos favoritos.",
+                price: 320000,
+                priceFormatted: "$ 320.000",
+                essence: "Bergamota",
+                image: "https://images.unsplash.com/photo-1594620302200-9a762244a156?auto=format&fit=crop&w=800&q=85"
+            },
+            {
+                id: 6,
+                name: "Escritorio Home Office",
+                category: "Estudio",
+                description: "Superficie amplia e inspiradora con notas cítricas para la concentración.",
+                price: 980000,
+                priceFormatted: "$ 980.000",
+                essence: "Bergamota",
+                image: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=800&q=85"
+            },
+            {
+                id: 7,
+                name: "Base Cama Queen",
+                category: "Dormitorio",
+                description: "Estructura firme y silenciosa impregnada con esencia relajante de lavanda.",
+                price: 1450000,
+                priceFormatted: "$ 1.450.000",
+                essence: "Lavanda",
+                image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=85"
+            },
+            {
+                id: 8,
+                name: "Mesa de Centro",
+                category: "Sala",
+                description: "Equilibrio orgánico y calidez para acompañar tus momentos en sala.",
+                price: 750000,
+                priceFormatted: "$ 750.000",
+                essence: "Vainilla",
+                image: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?auto=format&fit=crop&w=800&q=85"
+            },
+            {
+                id: 9,
+                name: "Nochero Artesanal",
+                category: "Dormitorio",
+                description: "Compañero de descanso con cajón suave y aroma relajante.",
+                price: 480000,
+                priceFormatted: "$ 480.000",
+                essence: "Lavanda",
+                image: "https://images.unsplash.com/photo-1532372320572-cda25653a26d?auto=format&fit=crop&w=800&q=85"
+            },
+            {
+                id: 10,
+                name: "Biblioteca Modular",
+                category: "Estudio",
+                description: "Diseño vertical para libros y decoración con carácter natural.",
+                price: 1350000,
+                priceFormatted: "$ 1.350.000",
+                essence: "Bergamota",
+                image: "https://images.unsplash.com/photo-1594620302200-9a762244a156?auto=format&fit=crop&w=800&q=85"
+            },
+            {
+                id: 11,
+                name: "Bife / Aparador",
+                category: "Comedor",
+                description: "Almacenamiento elegante para comedor con acabados hechos a mano.",
+                price: 1750000,
+                priceFormatted: "$ 1.750.000",
+                essence: "Vainilla",
+                image: "https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=800&q=85"
+            }
+        ];
+
+        // Información interactiva de esencias
+        const essencesInfo = {
+            Lavanda: {
+                badge: "RECOMENDACIÓN PARA LAVANDA",
+                title: "Ideal para: Clóset Mediano, Armario, Base Cama y Nochero",
+                desc: "Cada vez que abras tu clóset o te acuestes a descansar, sentirás una nota herbal suave que reduce el estrés y mantiene tu ropa con aroma fresco de hogar.",
+                defaultProduct: "Clóset Mediano"
+            },
+            Bergamota: {
+                badge: "RECOMENDACIÓN PARA BERGAMOTA",
+                title: "Ideal para: Escritorio Home Office, Mueble de TV y Biblioteca",
+                desc: "Su aroma fresco y cítrico despierta la mente, aporta claridad visual y llena las zonas activas de la casa de una sensación limpia y luminosa.",
+                defaultProduct: "Mueble de TV"
+            },
+            Vainilla: {
+                badge: "RECOMENDACIÓN PARA VAINILLA",
+                title: "Ideal para: Comedor 6 Puestos, Bife / Aparador y Mesa de Centro",
+                desc: "Crea una atmósfera envolvente, dulce y familiar perfecta para largas sobremesas y tardes de conversación en la sala.",
+                defaultProduct: "Comedor 6 Puestos"
+            }
+        };
+
+        let currentSelectedEssence = "Lavanda";
+
+        // Renderizar tarjetas de productos
+        function renderProducts(list) {
+            const grid = document.getElementById('products-grid');
+            const countEl = document.getElementById('product-count');
+            countEl.textContent = `${list.length} ${list.length === 1 ? 'producto encontrado' : 'productos encontrados'}`;
+
+            if (list.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full bg-[#291D15] rounded-2xl p-10 text-center card-border">
+                        <p class="font-serif text-2xl text-white mb-2">No encontramos muebles con ese filtro</p>
+                        <p class="text-xs text-stone-400 mb-4">Prueba buscando otro nombre o cambiando el rango de precio.</p>
+                        <button onclick="resetFilters()" class="px-5 py-2.5 rounded-full text-xs font-bold bg-[#C89D28] text-[#1E1610]">Ver todos los productos</button>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = list.map(prod => `
+                <article class="bg-[#291D15] rounded-2xl overflow-hidden card-border flex flex-col justify-between group hover:border-[#6E4720] transition-all shadow-lg">
+                    <div>
+                        <!-- Contenedor de imagen con fondo claro cálido como en la captura -->
+                        <div class="h-60 bg-[#EFECE6] overflow-hidden relative">
+                            <img 
+                                src="${prod.image}" 
+                                alt="${prod.name}" 
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                onerror="this.src='https://placehold.co/600x450/EFECE6/5D3A1A?text=${encodeURIComponent(prod.name)}'"
+                            >
+                        </div>
+                        <div class="p-6">
+                            <span class="inline-block px-3 py-1 rounded-full text-[10px] font-semibold bg-[#38291B] text-[#B37D3B] mb-3">
+                                ${prod.category}
+                            </span>
+                            <h3 class="font-serif text-2xl font-bold text-white mb-2">
+                                ${prod.name}
+                            </h3>
+                            <p class="text-xs text-stone-300 leading-relaxed mb-5">
+                                ${prod.description}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="px-6 pb-6">
+                        <p class="text-[11px] text-stone-400 mb-0.5">Precio de venta al público</p>
+                        <p class="font-serif text-2xl font-bold text-[#B87D28] mb-4">
+                            ${prod.priceFormatted}
+                        </p>
+                        <button 
+                            onclick="selectProductForQuote('${prod.name}', '${prod.essence}')" 
+                            class="w-full py-3 rounded-full bg-[#633E1B] hover:bg-[#784B21] text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all"
+                        >
+                            <span>Cotizar</span>
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        // Filtrar productos por texto y precio
+        function filterProducts() {
+            const query = document.getElementById('search-input').value.toLowerCase().trim();
+            const priceRange = document.getElementById('price-filter').value;
+
+            const filtered = productsData.filter(item => {
+                const matchesName = item.name.toLowerCase().includes(query) || 
+                                    item.category.toLowerCase().includes(query) ||
+                                    item.description.toLowerCase().includes(query);
+                
+                let matchesPrice = true;
+                if (priceRange === 'low') matchesPrice = item.price <= 1000000;
+                if (priceRange === 'mid') matchesPrice = item.price > 1000000 && item.price <= 1600000;
+                if (priceRange === 'high') matchesPrice = item.price > 1600000;
+
+                return matchesName && matchesPrice;
+            });
+
+            renderProducts(filtered);
+        }
+
+        function resetFilters() {
+            document.getElementById('search-input').value = '';
+            document.getElementById('price-filter').value = 'all';
+            renderProducts(productsData);
+        }
+
+        // Preseleccionar producto y llevar al formulario de cotización
+        function selectProductForQuote(productName, recommendedEssence) {
+            const prodSelect = document.getElementById('form-product');
+            const essSelect = document.getElementById('form-essence');
+            if (prodSelect) prodSelect.value = productName;
+            if (essSelect && recommendedEssence) essSelect.value = recommendedEssence;
+
+            setActiveNav('nosotros');
+            document.getElementById('contacto-form').scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => {
+                document.getElementById('form-name').focus();
+            }, 600);
+        }
+
+        // Cambiar esencia en el módulo interactivo
+        function selectEssence(essenceName) {
+            currentSelectedEssence = essenceName;
+            const info = essencesInfo[essenceName];
+
+            // Actualizar estilos de botones
+            ['Lavanda', 'Bergamota', 'Vainilla'].forEach(name => {
+                const btn = document.getElementById(`btn-ess-${name}`);
+                if (name === essenceName) {
+                    btn.className = "essence-btn px-5 py-2.5 rounded-full text-xs font-bold bg-[#C89D28] text-[#1E1610] transition-all shadow";
+                } else {
+                    btn.className = "essence-btn px-5 py-2.5 rounded-full text-xs font-semibold bg-[#7A522B] text-white hover:bg-[#8A5E34] transition-all";
+                }
+            });
+
+            // Actualizar textos
+            document.getElementById('ess-badge').textContent = info.badge;
+            document.getElementById('ess-title').textContent = info.title;
+            document.getElementById('ess-desc').textContent = info.desc;
+        }
+
+        function quoteWithEssence() {
+            const info = essencesInfo[currentSelectedEssence];
+            selectProductForQuote(info.defaultProduct, currentSelectedEssence);
+        }
+
+        // Manejo del formulario de cotización
+        function handleQuoteSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('form-name').value;
+            const product = document.getElementById('form-product').value;
+            const essence = document.getElementById('form-essence').value;
+
+            const feedback = document.getElementById('form-feedback');
+            const detail = document.getElementById('feedback-detail');
+
+            detail.textContent = `Gracias ${name}. Hemos registrado tu interés en "${product}" con esencia de ${essence}. Pronto nuestro equipo en Itagüí te contactará.`;
+            feedback.classList.remove('hidden');
+
+            e.target.reset();
+            setTimeout(() => {
+                feedback.classList.add('hidden');
+            }, 7000);
+        }
+
+        // Actualizar píldora activa del menú superior
+        function setActiveNav(sectionId) {
+            const navIds = ['inicio', 'productos', 'esencias', 'nosotros'];
+            navIds.forEach(id => {
+                const el = document.getElementById(`nav-${id}`);
+                if (!el) return;
+                if (id === sectionId) {
+                    el.className = "nav-pill px-4 py-1.5 rounded-full bg-[#5A381E] text-white transition-all";
+                } else {
+                    el.className = "nav-pill px-4 py-1.5 rounded-full text-stone-600 hover:text-stone-900 hover:bg-stone-200/60 transition-all";
+                }
+            });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Inicializar catálogo al cargar la página
+        window.addEventListener('DOMContentLoaded', () => {
+            renderProducts(productsData);
+        });
+    </script>
+</body>
+</html>
